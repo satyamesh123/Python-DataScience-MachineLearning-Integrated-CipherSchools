@@ -1,0 +1,31 @@
+Introduction:
+• Anaconda is a distribution of the Python and R programming languages that aims to simplify package management and deployment in data science and machine learning applications.
+• It was created by Anaconda, Inc. (formerly known as Continuum Analytics).
+
+----------------
+
+Why we use Anaconda?
+i.  Simplified Package Management
+ii. Comprehensive Distribution
+iii.Environment Management
+iv. Cross-Platform Compatibility
+v.  Open-Source Tools
+vi. Community support
+vii.Enterprise-Ready
+viii.Easy Of Use.
+
+------------------
+
+Environment in Anaconda
+
+• What is an Environment?
+-  In simple words, Set of Packages is called as an Environment.
+
+• Why Use Environments?
+• Isolate Projects
+• Maintain Multiple Versions
+• Reproducibility
+
+--------------------------
+
+Anaconda Download link:-    https://www.anaconda.com/download/success    
