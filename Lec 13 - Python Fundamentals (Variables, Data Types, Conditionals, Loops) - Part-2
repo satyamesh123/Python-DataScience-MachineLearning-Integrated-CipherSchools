@@ -1,0 +1,167 @@
+Conditionals:
+Definition: Conditional statements in Python (if, Elif, else) are used to execute code based on certain conditions.
+Use Case in Real Life: Conditionals can be used in an e-commerce application to provide different pricing tiers based on user membership levels (eg, standard, premium, VIP).
+
+
+#Basic if-elif-else statement
+age=20
+if age < 18:
+    print("Minor")
+elif age >= 18 and age < 65:
+    print("Adult")
+else:
+    print("Senior")
+
+#Checking Even or Odd Number
+number = 42
+if  number % 2 == 0:
+    print("Even Number")
+else:
+    print("Odd Number")
+
+
+# Grade Evaluation
+score = 85
+if score >= 90:
+    print("Grade: A")
+elif score  >= 80:
+    print("Grade: B")
+elif score  >= 70:
+    print("Grade: C")
+elif score  >= 60:
+    print("Grade: D")
+else:
+    print("Grade: F")
+
+
+# Temprature Check
+temprature = 30
+if temprature > 30:
+    print("It's a hot day")
+elif temprature >= 20:
+    print("It's a nice day")
+else:
+    print("It's a cold day")
+
+
+# Nested Condition for BMI Calculation
+weight = 70  #in kg
+height = 1.75  #in meters
+bmi = weight / (height ** 2)
+if bmi < 18.5:
+    print("Underweight")
+else:
+    if bmi < 24.9:
+        print("Normal weight")
+    else:
+        if bmi < 29.9:
+            print("Overweight")
+        else:
+            print("Obesity")
+
+
+# Traffic Light System
+traffic_light = "Green"
+if traffic_light == "Red":
+    print("Stop")
+elif traffic_light == "Yellow":
+    print("Caution")
+elif traffic_light == "Green":
+    print("Go")
+else:
+    print("Invalid traffic light color")
+
+
+# user login status
+is_logged_in = True
+has_permission = True
+if is_logged_in:
+    if has_permission:
+      print("Access grannted")
+    else:
+      print("Access Denied")
+else:
+    print("Access Denied")
+
+
+# Multiple Conditiond (AND/OR)
+temprature = 25
+weather = "Sunny"
+if temprature > 20 and weather == "Sunny":
+    print("it's a great day for a walk")
+elif temprature <= 20 or weather != "Sunny":
+    print("Maybe stay indoors today")
+else:
+    print("Weather cnditions are unusual")
+
+****************************************************************************************************************************************************
+
+Loops:
+Definition: Loops are used to execute a block of code repeatedly. Python supports for and while loops.
+Use Case in Real Life: Loops can be used to process items in a list. For instance, in a payroll system, a for loop could iterate through a list of employees and calculate their salaries.
+
+# For Loop
+for i in range(5):
+    print(i)
+
+#iterating over a list
+fruits = ["apple", "banana", "Cherry", "date"]
+for fruit in fruits:
+    print(fruit)
+
+#Iterating over a String
+greeting  = "Hello"
+for char in greeting:
+    print(char) 
+
+#Iterating over a String
+person = {"name": "John", "age": 30, "city": "New York"}
+for key, value in person.items():
+    print(f"{key}: {value}")
+
+#using the 'range()' func with a Step
+for i in range(0,10,2):
+    print(i)
+
+# Nested for loop
+for i in range(3):
+    for j in range(2):
+      print(f"i = {i} , j = {j}")
+
+# using the 'enumerate()' Function
+fruits = ["apple", "banana", "cherry"]
+for index, fruit in enumerate(fruits)
+    print(f"{index} : {fruit}")
+
+
+
+# While loop
+count = 0
+while count < 5:
+    print(count)
+    count += 1
+
+# While loop using Break
+count = 0
+while True:
+    print(count)
+    count += 1
+    if count >= 5
+        break
+
+# While loop using continue
+count = 0
+while count < 10:
+    count += 1
+    if count % 2 == 0:
+        continue
+            print(count)
+
+# While loop for validation
+password = ""
+while len(password) < 8:
+    password = input("Enter a password that should be more than 8 digits: ")
+    if len(password) < 8:
+        print("Password is too short.")
+    else:
+        print("Password accepted.")
