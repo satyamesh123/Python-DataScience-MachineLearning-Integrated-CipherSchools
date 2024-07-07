@@ -1,0 +1,39 @@
+Correlation
+Definition: Correlation measures the strength and direction of a linear relationship between two variables.
+
+Formulas:
+
+1. Pearson Correlation Coefficient (r):
+r= n(Σxy) – (Σx)(Σy) / ν [ηΣx^2 - (Σx)²] [η Σy² - (Σy)²]
+Where n is the number of pairs, 2 and y are the individual sample points indexed with i.
+
+Concepts:
+• Strength of Relationship: The correlation coefficient ranges from 1 to +1. A value close to +1 implies a strong positive relationship, close to -1 implies a strong negative relationship, 
+and around 0 implies no linear relationship.
+• Direction of Relationship: Indicates whether the variables increase together (positive) or as one increases, the other decreases (negative).
+
+Real-life Use Case:
+• Determining the relationship between consumer income and expenditure on luxury items.
+• In finance, correlating different stock movements to diversify the portfolio
+
+```````````````````````````````````````````````````````````````````````````````````````````````````````
+
+Correlation Matrix:
+
+Types of Correlation Coefficients: 
+1. Pearson Correlation Coefficient: Measures the linear relationship between two continuous variables. It assumes that the variables follow a normal distribution.
+2. Spearman's Rank Correlation Coefficient: A non-parametric measure of rank correlation, assessing how well the relationship between two variables can be described using a monotonic function.
+3. Kendall's Tau: Another rank-based correlation coefficient, often used for data with a natural ordinal classification.
+
+Understanding a Correlation Matrix:
+A correlation matrix displays correlation coefficients between sets of variables. Each cell in the matrix represents the correlation between two variables. The value ranges from -1 to +1, where:
+• +1 indicates a perfect positive linear relationship,
+• -1 indicates a perfect negative linear relationship,
+• O indicates no linear relationship.
+
+Real-Life Use Cases
+1. Finance: Correlation matrices are used to understand the relationships between different stocks or financial instruments, aiding in portfolio diversification.
+2. Marketing: Analyzing customer data to find correlations between different buying behaviors.
+3. Healthcare: Studying correlations between diffärent lifestyle factors and health outcomes.
+
+ 
