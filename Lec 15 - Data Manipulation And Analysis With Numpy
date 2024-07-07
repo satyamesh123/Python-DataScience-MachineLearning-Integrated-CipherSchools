@@ -1,0 +1,130 @@
+Data Manipulation and Analysis with NumPy:
+
+Definition: NumPy is a fundamental package for scientific computing with Python. It provides support for arrays, matrices, and a large collection of mathematical functions to operate on these data structures.
+NumPy arrays are more efficient and provide better performance for numerical operations compared to Python's built-in lists
+
+Use Case in Real Life: NumPy can be used in various scientific computing scenarios, such as statistical analysis, signal processing, and image processing.
+
+# To install a library
+pip install name(library)
+# To import a library
+import name(library)
+
+# Creating a NumPy  Array from a List
+pip install numpy
+import numpy as np      # using as(alias) keyword to rename the numpy as np
+arr1 = np.array([1,2,3,4,5,6])
+print(arr1)
+arr2 = np.array([[10,20,30], [70,80,90]])
+print(arr2)
+
+#CREATING ARRAY WITH FUNCTIONS
+# creating array of Zeroes
+arr1 = np.zeros((3,4))      #Assigning the dimensions
+print(zeros)
+
+# creating array of Ones
+arr1 = np.ones((3,4))      #Assigning the dimensions
+print(ones)
+
+# Arranging an array within a given range of values
+arr1 = np.arrange((10,20,2))      
+print(arr1)
+
+# creating array with random values
+arr1 = np.random.rand((3,4))      
+print(arr1)
+
+BASIC ARRAY OPERATIONS - ELEMENT-WISE OPERATIONS  
+
+arr = np.array([1,2,3,4,5])
+
+# element-wise addition
+print(arr + 2)
+
+#element-wise multiplication
+print(arr*2)
+
+#element-wise substraction
+print(arr - 2)
+
+#element-wise division
+print(arr / 2)
+
+BASIC ARRAY OPERATIONS - MATHEMATICAL FUNCTIONS 
+
+arr = np.array([1,2,3,4,5])
+
+# square root
+print(np.sqrt(arr))
+
+# Exponential
+print(np.exp(arr))
+
+# Logarithm
+print(np.log(arr))
+
+# Sine
+print(np.sin(arr))
+
+
+INDEXING AND SLICING
+
+arr = np.array([1,2,3,4,5])
+# Indexing
+print(arr[0]) # first element
+print(arr[-1]) # Last element
+
+# Slicing
+print(arr[1:4]) # Elements from index 1 to 3
+print(arr[:3]) # First 3 elements
+print(arr[2:]) # Elements from the index number 2 to the last index
+
+# Advanced indexing
+
+# Boolean indexing
+print(arr[arr > 3])   
+
+# Fancy indexing
+indices = [0,2,4]
+print(arr[indices]))
+
+RESHAPING AND TRANSPOSING ARRAYS
+
+arr = np.array([1,2,3] , [4,5,6])
+
+# Reshaping                        #Note : Total number of elements should be constant
+reshaped = arr.reshape((3,2))
+print(reshaped) 
+
+# Transposing = prints the transpose of the array
+transposed = arr.t
+print(transposed)
+
+AGGREGATION FUNCTIONS - SUM , MEAN , MIN , MAX
+
+arr = np.array([1,2,3] , [4,5,6])
+
+# sum of all the elements
+print(np.sum(arr))
+
+# sum along columns
+print(np.sum(arr, axis=0))
+
+# sum along rows
+print(np.sum(arr, axis=1))
+
+# Mean of all elements
+print(np.mean(arr))
+
+# Minimum Value
+print(np.min(arr))
+
+# Maximum Value
+print(np.max(arr))
+
+# Index of the Minimum Value
+print(np.argmin(arr))
+
+# Index of the Maximum Value
+print(np.argmax(arr))
