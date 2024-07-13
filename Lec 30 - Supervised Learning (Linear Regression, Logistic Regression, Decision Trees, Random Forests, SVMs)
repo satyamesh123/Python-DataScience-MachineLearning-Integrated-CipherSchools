@@ -1,0 +1,154 @@
+Introduction to Supervised Learning:
+Supervised learning is a fundamental machine learning technique where an algorithm is trained on labeled data to make predictions on new, unseen data. This powerful approach has numerous applications, 
+from spam filtering to medical diagnosis.
+
+• Overfitting (High variance): In this, the model focuses too much on specific patterns in the training dataset and does not generalize well on unseen data. Overfitting can happen when models are too complex.
+- Reasons for Overfitting:
+  1. Too complex model.
+  2. Too much training.
+  3. Limited training data.
+
+• Underfitting (High bias): A high level of bias can lead to underfitting, which occurs when the algorithm is unable to capture relevant relations between features and target outputs. A high bias model typically 
+  includes more assumptions about the target function or end result.
+- Reasons for Underfitting:
+  1. Too simple model.
+  2. Insufficient training.
+  3. Poor feature selection.
+
+• Good balance (Optimal/Low bias/low variance):  A model that has low bias and low variance means that the model is able to capture the underlying patterns in the data (low bias) and is not too sensitive to changes in 
+  the training data (low variance).
+
+
+ALGORITHMS
+``````````
+
+1-Linear Regression: Understanding Continuous Relartionships
+  Linear regression is a powerful technique for understanding the continuous relationships between variables. By identifying patterns in data, linear regression 
+  allows you to build predictive models that can forecast future outcomes. The key is estimating the parameters that describe the strength and direction of the 
+  relationships between your input and output variables.
+
+- Importance:
+• Identifying Patterns: Uncover how variables are related.
+• Predicting Outcomes: Forecast future values based on input data.
+• Estimating Parameters: Determine the strength and direction of the relationships.
+
+from sklearn.model selection import train test split 
+from sklearn.linear model import LinearRegression 
+from sklearn.metrics import mean_squared_error
+#Generating synthetic data 
+import numpy as np 
+X = np.random.rand(100, 1) * 10
+y = 2.5 * X + np.random.randn(100, 1) * 2
+#Splitting data into training and testing sets 
+X_train, X_test, y train, y test train test split(X, y, test sizes=0.2, random state=42)
+#Training the model 
+model = LinearRegression() 
+model.fit(X_train, y_train)
+# Making predictions 
+y_pred = model.predict(X_test)
+#Evaluating the model 
+mse = mean_squared_error(y_test, y_pred) 
+print('Mean Squared Error: (mse)')
+
+2- Logistic Regression: Predicting Binary Outcomes:
+                            
+                           Input Data
+                (Categorical or numerical features)
+                                ⬇
+                          Transformation
+          (Apply the logistic funciton to predict possibility)
+                                ⬇
+                          Classification
+          (Determine class based on probability threshold)
+• z = bo + b₁x₁ + ... + brXr
+• p(x) = 1 / 1+ e^-z
+• Sigmoid function : σ(z) = 1 / 1+ e^-z
+
+fron sklearn.datasets import load_iris 
+from sklearn.model_selection import train_test_split 
+from sklearn.linear_model import LogisticRegression 
+from sklearn.metrics import accuracy_score
+#Loading the Iris dataset
+iris = load_iris() 
+X = iris.data 
+y = iris.target
+#Using only two classes for binary classification
+X = X[y != 2] 
+y = y[y != 2]
+#Splitting data into training and testing sets 
+X_train, X_test, y_train, y_test = train_test_split(X, y, test size=0.2, random state=42)
+#Training the model
+model = LogisticRegression()
+model.fit(X_train, y_train)
+#Making predictions
+y_pred = model.predict(X_test)
+#Evaluating the model \
+accuracy = accuracy_score(y_test, y_pred) 
+print(f'Accuracy: {accuracy}')
+
+
+3 - Decision Trees: Building a Hierarchial Model
+• Feature Selection:
+  Identify the most important features that will drive the decision-making process. This is a crucial first step in constructing an effective decision tree.
+• Recursive Partitioning
+  The decision tree algorithm repeatedly splits the data based on the features, creating a hierarchical tree-like structure of decisions and outcomes.
+
+                                              ROOT Node
+                                                 /\
+                                                /  \
+                                               /    \
+                                  Decision Node      Desicion Node
+                                   /\                           /\
+                                  /  \                         /  \
+                                 /    \           Terminal Node    Terminal Node
+                    Terminal Node      Decision Node
+                                       /\
+                                      /  \
+                                     /    \
+                        Terminal Node      Terminal Node
+
+from sklearn.datasets import load_iris 
+from sklearn.model_selection import train_test_split 
+from sklearn.tree import DecisionTreeClassifier 
+from sklearn.metrics import accuracy_score
+#Loading the Iris dataset 
+iris = load iris() 
+X= iris.data 
+y = iris.target
+#Splitting data into training and testing sets
+X_train, X_test, y train, y_test = train_test_split(X, y, test size=0.2, random_state=42)
+#Training the model 
+model = DecisionTreeClassifier() 
+model.fit(X_train, y_train)
+#Making predictions
+y_pred = model.predict(X_test)
+#Evaluating the model \
+accuracy = accuracy_score(y_test, y_pred) 
+print(f'Accuracy: {accuracy}')
+
+Support Vector Machines (SVMs):
+1 - Maximize Margin: SVM identifies the optimal hyperplane that maximizes the distance between data points of different classes.
+2 - Kernel Trick: By using kernel functions, SVMs can efficiently handle non-linear problems in high dimensional spaces.
+3 - Robust to Outliers: SVMs are less sensitive to outliers compared to other classification algorithms.
+
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split 
+from sklearn.svm import SVC 
+from sklearn.metrics import accuracy_score
+# Loading the Iris dataset
+iris load_iris()
+X = iris.data 
+y = iris.target
+# Using only two classes for binary classification
+X = X[y != 2]
+y = y[y != 2]
+#Splitting data into training and testing sets
+X_train, X_test, y_train, y test train_test = split(x, y, test size=0.2, random state=42)
+# Training the model 
+model = SVC() 
+model.fit(X_train, y_train)
+# Making predictions 
+y_pred = model.predict(X_test)
+# Evaluating the model 
+accuracy = accuracy_score(y_test, y_pred) 
+print(f'Accuracy: {accuracy}')
