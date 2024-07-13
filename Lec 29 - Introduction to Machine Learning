@@ -1,0 +1,46 @@
+What is Al?
+• Simulation of Human intelligence processes by machines.
+                        Or
+• It is the ability for a computer to think and learn.
+
+Terms used in AI:
+• Learning
+• Reasoning
+• Self-Correction
+                      Types of AI
+                            |
+        ------------------------------------------
+        |                                        |
+    Weak AI                                Strong AI
+                                          
+What is ML?
+Machine learning is the subset of Al that uses statistical methods to allow machines to improve their results adth the amount of training data fed to it.
+- Human Learning: Observations ➡ Learning ➡ Skills
+- Machine Learning: Data ➡ Model/Predictor ➡ Predict
+
+Types of AL:
+• Supervised Learning: A Machine Learning model that works on Labeled set of data.
+Labeled Data & Labels ➡ Machine ➡ ML Model ➡ Predictions
+                                      ⬇
+                                  Test Data
+
+• Unsupervised Learning: A Machine Learning model that works on Unlabeled set of data. It works by analyzing the similar kinds of pattern in the data and classify them according to that.
+DDCD ➡ Model ➡ DDDDD
+CCDD             CCC
+
+• Clustering: Grouping unlabeled examples based on similar instances is called clustering.
+
+1. Email spam classification = Supervised Learning
+2. Recommendation System = Both Supervised and Unsupervised
+3. Cat-dog classification = Supervised Learning
+4. Cat-dog Clustering = Unsupervised Learning
+5. Playing alpha Go game = Both Supervised and Unsupervised
+
+• Artificial Intelligrnce (1950s-1980s): Any technique which enables computers to mimic human behavior.
+• Machine Learning (1980s-2010s): AI technique that give computers the ability to learn without being explicitly programmed to do so.
+• Deep Learning (2010s....): A subset of ML which makes the computation of multi-layer nerursl networks feasible.
+
+What is Data science?
+• Data Science is a field of study involving statistical tools and techniques to extract meaningful insights from data.
+• The data from which these insights are extracted can come from various sources, including databases, business transactions, sensors, and more. 
+• Data science uses complex machine learning algorithms to build predictive models.
