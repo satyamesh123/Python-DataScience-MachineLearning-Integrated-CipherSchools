@@ -1,0 +1,80 @@
+Basics of Dash and Plotly:
+In this notebook, we will cover the basics of Dash and Plotly. We will explain the essential components used to create a simple web application.
+
+
+Initializing the Dash App:
+To start using Dash, you need to import the Dash module and create an instance of the Dash class. This instance will be your app.
+
+import dash
+# Initialize the Dash app
+app = dash.Dash(__name__)
+
+
+Defining the Layout
+The layout of a Dash app is defined using Dash's HTML and core components. The layout describes what the app looks like.
+
+from dash import dcc, html
+# Define the layout
+app.layout = html.Div([
+    html.H1("My Dash App", style={'textAlign': 'center'}),
+    dcc.Input(id='input-box', type='text', value='Type something...'),
+    html.Button('Submit', id='button'),
+    html.Div(id='output-div')
+])
+
+
+Callback to Update the Output
+Callbacks in Dash are used to update the app's layout interactively. A callback is a function that gets automatically called by Dash whenever the input components' 
+values change.
+
+from dash.dependencies import Input, Output
+# Define callback to update output
+@app.callback(
+    Output('output-div', 'children'),
+    Input('button', 'n_clicks'),
+    [dash.dependencies.State('input-box', 'value')]
+)
+def update_output(n_clicks, value):
+    if n_clicks is not None:
+        return f'You have entered: {value}'
+    return ''
+
+
+Running the App
+To run the app, you need to call the run_server method on the app instance. This will start a web server that serves the app.
+
+if __name__ == '__main__':
+    app.run_server(debug=True)
+
+
+Example: Adding a Text Area
+You can add a text area to your Dash app using the dcc.Textarea component. This component allows the user to input multiline text
+
+app.layout = html.Div([
+    html.H1("Chatbot", style={'textAlign': 'center'}),
+    dcc.Textarea(
+        id='user-input',
+        value='Type your question here...',
+        style={'width': '100%', 'height': 100}
+    ),
+    html.Button('Submit', id='submit-button', n_clicks=0),
+    html.Div(id='chatbot-output', style={'padding': '10px'})
+])
+
+
+Example: Creating a Chatbot Response
+We can create a simple chatbot response by defining a callback function that takes user input and generates a response.
+
+# Define callback to update chatbot response
+@app.callback(
+    Output('chatbot-output', 'children'),
+    Input('submit-button', 'n_clicks'),
+    [dash.dependencies.State('user-input', 'value')]
+)
+def update_output(n_clicks, user_input):
+    if n_clicks > 0:
+        return html.Div([
+            html.P(f"You: {user_input}", style={'margin': '10px'}),
+            html.P(f"Bot: I am training now, ask something else.", style={'margin': '10px', 'backgroundColor': '#f0f0f0', 'padding': '10px', 'borderRadius': '5px'})
+        ])
+    return "Ask me something!"
