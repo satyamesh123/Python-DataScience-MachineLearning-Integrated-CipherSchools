@@ -1,0 +1,49 @@
+2. Designing and Training a Simple Chatbot
+Preprocessing Text Data:
+  Before training a chatbot, we need to preprocess the text data by tokenizing the text, removing stop words, and applying stemming or lemmatization.
+
+import pandas as pd
+import nltk
+#Load the dataset
+data = pd.read_csv('chatbot_dataset.csv')
+#Preprocess the data
+nltk.download('punkt')
+data['Question'] = data['Question'].apply(lambda x:' '.join(nltk.word_tokenize(x.lower())))
+print(data.head())
+
+
+Vectorizing Text Data:
+We convert the text data into numerical values using TF-IDF (Term Frequency-Inverse Document Frequency) vectorization.  
+
+from sklearn.feature_extraction.text import TfidfVectorizer
+vectorizer = TfidfVectorizer()
+X = vectorizer.fit_transform(data['Question'])
+print(X.shape)
+
+
+Training a Text Classification Model:
+We use the Naive Bayes classifier to train the model on the vectorized text data
+
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.pipeline import make_pipeline
+from sklearn.model_selection import train_test_split
+# Split the data into training and test sets
+X_train, X_test, y_train, y_test = train_test_split(data['Question'], data['Answer'], test_size=0.2, random_state=42)
+# Create a model pipeline
+model = make_pipeline(TfidfVectorizer(), MultinomialNB())
+# Train the model
+model.fit(X_train, y_train)
+print("Model training complete.")
+
+
+Implementing a Function to Get Chatbot Responses:
+We write a function to process user input and return responses based on the trained model.
+
+# Function to get a response from the chatbot
+def get_response(question):
+    question = ' '.join(nltk.word_tokenize(question.lower()))
+    answer = model.predict([question])[0]
+    return answer
+
+# Testing the function
+print(get_response("What is NLP?"))
